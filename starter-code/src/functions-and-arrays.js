@@ -102,6 +102,15 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray (newArr) {
+  let newSomething = [];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newSomething.indexOf(newArr[i]) === -1) {
+      newSomething.push(newArr[i])
+    }
+  } return newSomething
+}
+
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -113,6 +122,18 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist (newArr, word) {
+  if (newArr.length === 0) {
+    return false
+  }
+  for (let i = 0; i < newArr.length; i++) {
+    if (word === newArr[i]) {
+      return true;
+    } 
+    }  return false;
+  }
+
 
 // Counting Repetition
 const wordsCount = [
@@ -128,6 +149,19 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes (newArr, word) {
+  if (newArr.length === 0) {
+    return 0
+  }
+  let count = 0
+  for (let i = 0; i < newArr.length; i++) {
+    if (word === newArr[i]) {
+      count++;
+    } 
+    }  return count;
+  }  
+
 
 // Bonus
 
@@ -153,3 +187,7 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+function greatestProduct {
+  
+}
