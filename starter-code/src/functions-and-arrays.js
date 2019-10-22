@@ -79,10 +79,10 @@ const wordsArr = [
 ];
 
 function averageWordLength (newArr) {
-  let sum = 0
-  if (newArr === 0) {
+  if (newArr.length === 0) {
     return null
   }
+  let sum = 0
   sum = newArr.join("").length
   return sum / newArr.length
 }
