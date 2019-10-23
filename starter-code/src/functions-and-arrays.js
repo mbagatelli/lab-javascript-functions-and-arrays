@@ -188,6 +188,43 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct {
+/*const matrix = [08, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 08]
+
+function greatestProduct (newArr) {
+  let multiply = 0;
+  for (let i = 0; i < newArr.length; i++) {  
+    let sum = newArr[i] * newArr[i+1] * newArr[i+2] * newArr[i+3] * newArr[i+4];
+    if (sum > multiply ) {
+      multiply = sum;
+    } 
+  } return multiply
+}
+
+console.log(greatestProduct(matrix))
+*/
+
+function greatestProduct (matrix) {
+  let greatest;
+
+  // CHECK COMBINATIONS HORIZONTALY
+  for (let r = 0; r < matrix.length; r++) {
+    for (let i = 0; i < matrix[r].length - 4 + 1; i++) {
+      const product = matrix[r][i] * matrix[r][i+1] * matrix[r][i + 2] * matrix[r][i + 3];
+      if (typeof greatest === 'undefined' || product > greatest) {
+        greatest = product;
+      }
+    }
+  }
+
+  // CHECK COMBINATIONS VERTICALY
+  for (let c = 0; c < matrix[0].length; c++) {
+    for (let i = 0; i < matrix.length - 4 + 1; i++) {
+      const product = matrix[i][c] * matrix[i + 1][c] * matrix[i + 2][c] * matrix[i + 3][c];
+      if (typeof greatest === 'undefined' || product > greatest) {
+        greatest = product;
+      }
+    }
+  }
   
+  return greatest;
 }
